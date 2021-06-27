@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ranjit/spec:frontend
+      run: docker build . --file Dockerfile --tag spec-frontend
   push:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
@@ -24,4 +24,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ranjit/spec:frontend
+          tags: spec-frontend
