@@ -15,7 +15,7 @@ COPY . /app
 RUN ng build --output-path=dist
 
 FROM nginx:stable-alpine
-COPY --from=build /app/dist/spec-frontend var/www/myspec.in/app;
+COPY --from=build /app/dist var/www/myspec.in/app;
 # COPY --from=build /app/nginx-conf/nginx.conf /etc/nginx/conf.d/default.conf
 LABEL com.centurylinklabs.watchtower.enable="true"
 EXPOSE 80
